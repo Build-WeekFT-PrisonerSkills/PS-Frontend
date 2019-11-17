@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- **[React Developer 1](#junior-react-developer)**<br>
+- **[React Developer 1](#junior-react-developers)**<br>
 - **[React Developer 2](#senior-react-developer)**<br>
 - **[Product Vision Document](#second-chance)**<br>
 - **[Proposal](#proposal)**<br>
@@ -16,7 +16,7 @@
 ## <a name='overview'></a>Overview
 This frontend code base allows users to navigate Second Chance's web platform. Employers can view available prisons and their inmates as well as their information to find potential employees for their business. Career Coaches from various prisons can register and login to utilize Second Chance's web platform to host their prison on the website for employer/business owner viewing to assist the prison inmates in transitioning to civilian life. 
 
-## Junior React Developer
+## Junior React Developers
 Applied JavaScript | Intro-to-React| Single Page Application | TeamWork Capabilities | Form Managment
 | --------------------- | ---------------------- | --------------------- | -------------------- | ------------ |
 Incorporated third party animation via zoom in material UI library. Array methods were used to dynamically render HTML elements | Created dynamic functional components and showcased proper usage of state and props with small reusable components. Usage of webHooks to manage state. | Used Axios to perform GET HTTP requests to database for list of events.  | Pair Programmed with React 2 Dev and Back End Architect to deliver top notch web platform | Utilized third party library Formik to create user friendly forms.
@@ -163,17 +163,17 @@ This is the “bread and butter” of the app, this is what makes your app yours
 
 ## Credits
 ### Project Manager
-Justin Trombley https://github.com/JustinTrombley96
+Justin Trombley https://github.com/JustinTrombley96 <br>
 
 ### User Interface
-Maggie Price https://github.com/maggieprice
-Rick Ahlgren https://github.com/thericktastic
+Maggie Price https://github.com/maggieprice <br>
+Rick Ahlgren https://github.com/thericktastic <br>
 
 ### Frontend
-Jackson Ogles (senior react dev): https://github.com/cjogles
-Walter Futch (junior react dev): https://github.com/WalterTheCodeGuy 
-Sunil Karki (junior react dev): https://github.com/karkisunil1200 
+Jackson Ogles (senior react dev): https://github.com/cjogles <br>
+Walter Futch (junior react dev): https://github.com/WalterTheCodeGuy <br>
+Sunil Karki (junior react dev): https://github.com/karkisunil1200 <br>
 
 ### Backend
-Sean Naleid https://github.com/seanaleid
-Taylor Hunkler https://github.com/taylorhh5
+Sean Naleid https://github.com/seanaleid <br>
+Taylor Hunkler https://github.com/taylorhh5 <br>
