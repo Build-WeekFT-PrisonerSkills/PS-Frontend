@@ -19,7 +19,7 @@ This frontend code base allows users to navigate Second Chance's web platform. E
 ## Junior React Developers
 Applied JavaScript | Intro-to-React| Single Page Application | TeamWork Capabilities | Form Managment
 | --------------------- | ---------------------- | --------------------- | -------------------- | ------------ |
-Incorporated third party animation via zoom in material UI library. Array methods were used to dynamically render HTML elements | Created dynamic functional components and showcased proper usage of state and props with small reusable components. Usage of webHooks to manage state. | Used Axios to perform GET HTTP requests to database for list of events.  | Pair Programmed with React 2 Dev and Back End Architect to deliver top notch web platform | Utilized third party library Formik to create user friendly forms.
+Utilized Styled Components to style web app. Array methods were used to dynamically render HTML elements | Created dynamic functional components and showcased proper usage of state and props with small reusable components. Usage of webHooks to manage state. | Used Axios to perform GET HTTP requests to database for list of events.  | Pair Programmed with React 2 Dev and Back End Architect to deliver top notch web platform | Utilized third party library Formik to create user friendly forms.
 
 ## Senior React Developer
 React Application | HTTP/AJAX | Sate Management | TeamWork Capabilities |
