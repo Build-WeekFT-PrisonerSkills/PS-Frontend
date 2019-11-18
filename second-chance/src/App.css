@@ -20,3 +20,20 @@
 .App-link {
   color: #09d3ac;
 }
+
+img {
+  height: 500px;
+  width: 500px;
+  padding: 20px;
+}
+
+.loginEntry {
+  width: 528px;
+  height: 83px;
+  left: 810px;
+  top: 227px;
+  text-align: center;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
