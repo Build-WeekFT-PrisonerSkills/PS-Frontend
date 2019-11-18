@@ -1,13 +1,10 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
-import Login from './Components/Login';
+import { LandingPage } from './Pages/LandingPage';
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <LandingPage/>
     </div>
   );
 }
