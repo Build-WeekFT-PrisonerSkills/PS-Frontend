@@ -1,12 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import AddPrisonForm from './Components/AddPrison/AddPrisonForm';
+import {NewPrisonForm} from './Components/AddPrison/NewPrisonForm';
 
 function App() {
   return (
     <div className='App'>
-      <AddPrisonForm />
+      <NewPrisonForm />
     </div>
   );
 }
