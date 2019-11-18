@@ -35,12 +35,12 @@ Own a business? Want to do good in the world? Look no further! "Second Chance" i
 
 #### Minimal Viable Product (MVP)
 - This app contains two user types. A career coach (aka prison admin) who has the ability to log in and an employer who has no need to log in or have user data persist in app who can view prison data and prison employee data for potential hiring. 
-- Landing Page: Has a nav bar with title: "Second Chance", and a login and register button for career coaches to manage prison data. Landing page also contains two other buttons or cards: one for career coaches to use to reach same functionality to manage prison data, and another for employers to view prison data. Career coaches are required to register and log in to edit data.
-*Pages for Potential Employers*
+- Landing Page: Has a nav bar with title: "Second Chance", and a login and register button for career coaches to manage prison data. Landing page also contains two other buttons or cards: one for career coaches to use to reach same functionality to manage prison data, and another for employers to view prison data. Career coaches are required to register and log in to edit data. <br>
+-- *Pages for Potential Employers*
 - Prison Listing Page: After clicking on the "for employers" button, no need to log in. Contains a list of prisons who have posted employee (aka prisoner) profiles. Each prison is laid out in a grid format, with the name of the prison, number of people available to work (total number of entries a given career coach has submitted), and the physical address/location of the prison. Clicking on a prison card takes you to the employee (aka prisoner) profile listing page.
 - Employee Listing Page: After clicking on the prison card, non-logged in users can view the list of employee profiles associated with that prison.
-- Single Employee Page: After clicking on a single employee card, users can read more about a single employee (prisoner) list of resume and job skills.
-*Pages for Career Coaches (aka Prison Admins)*
+- Single Employee Page: After clicking on a single employee card, users can read more about a single employee (prisoner) list of resume and job skills. <br>
+-- *Pages for Career Coaches (aka Prison Admins)*
 - Register Page
 - Login Page
 - Create a Prison Page: Career Coach led to this page if no profile is created yet. After creation, Prison is added to list of prison page for employer view. Assuming Prison Profile is already created, and Career Coach is logged in, they are directed to Career Coach Dashboard Page.
