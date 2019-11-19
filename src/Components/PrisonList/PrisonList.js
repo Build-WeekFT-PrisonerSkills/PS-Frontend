@@ -2,17 +2,17 @@ import React, {useState, useEffect} from 'react';
 import {Link, Route} from 'react-router-dom';
 import axios from 'axios';
 
-import GetPrisons from './Prisons';
+import Prisons from './Prisons';
 
 const PrisonList = () => {
-  const [getPrison, setPrison] = useState([]);
+  const [prison, setPrison] = useState([]);
   const [getResult, setResult] = useState('');
 
   useEffect(() => {
     axios
       .get('https://prisoner-skills-bw.herokuapp.com/api/users/')
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         setPrison(res.data);
       })
       .catch(err => {
@@ -23,8 +23,12 @@ const PrisonList = () => {
   return (
     <div>
       <div className='prisonList'>
-        {getPrison.map(prison => (
-          <GetPrisons prison={prison} />
+        {prison.map(prison => (
+          <Link to={`/api/users/${prison.id}`}>
+            <div>
+              <Prisons prison={prison} />
+            </div>
+          </Link>
         ))}
       </div>
     </div>
