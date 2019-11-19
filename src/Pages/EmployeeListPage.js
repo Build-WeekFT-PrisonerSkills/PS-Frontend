@@ -24,7 +24,7 @@ export const EmployeeListPage = (props) => {
   console.log(prisonId)
   return (
       <>
-        <h1>Employees</h1>
+        <h1>Employees at {prisonId}</h1>
           {inmateList.map(item => (
               <div key={item.id} className="inmateCard">
                 <h2>{item.inmateFirstName} {item.inmateLastName}</h2>
