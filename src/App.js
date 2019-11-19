@@ -23,20 +23,20 @@ function App() {
     <div className="App">
       <Switch>
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/register" render={props => <RegisterPage {...props}/>} />
+        <Route exact path="/login" render={props => <LoginPage {...props}/>} />
+        <Route exact path="/prisonList" render={props => <PrisonListPage {...props}/>} />
+        <Route exact path="/prisonProfile/:id" render={props => <PrisonProfilePage {...props}/>} />
+        <Route exact path="/employeeList/:id/employees" render={props => <EmployeeListPage {...props}/>} />
+        <Route exact path="/employeeProfile/:id" render={props => <EmployeeProfilePage {...props}/>} />
         <PrivateRoute>
-          <Route exact path="/api/auth/register" component={RegisterPage} />
-          <Route exact path="/api/auth/login" component={LoginPage} />
-          <Route exact path="/api/users/" component={PrisonListPage} />
-          <Route exact path="/api/users/:id" component={PrisonProfilePage} />
-          <Route exact path="/api/auth/login" component={CC_PrisonProfile} />
-          <Route exact path="/api/users/prison" component={CC_AddPrison} />
-          <Route exact path="/api/users/:id" component={CC_EditPrison} />
-          <Route exact path="/api/users/:id/inmates" component={EmployeeListPage} />
-          <Route exact path="/api/users/inmates/:id" component={EmployeeProfilePage} />
-          <Route exact path="/api/auth/login" component={CC_EmployeeProfile} />
-          <Route exact path="/api/users/inmates" component={CC_AddEmployee} />
-          <Route exact path="/api/users/inmates/:id" component={CC_EditEmployee} />
-          <Route exact path="/api/auth/login" component={CC_Dashboard} />
+          <Route exact path="/prisonProfile" render={props => <CC_PrisonProfile {...props}/>} />
+          <Route exact path="/addPrison" render={props => <CC_AddPrison {...props}/>} />
+          <Route exact path="/editPrison/:id" render={props => <CC_EditPrison {...props}/>} />
+          <Route exact path="/employeeProfile" render={props => <CC_EmployeeProfile {...props}/>} />
+          <Route exact path="/addEmployee" render={props => <CC_AddEmployee {...props}/>} />
+          <Route exact path="/editEmployee/:id" render={props => <CC_EditEmployee {...props}/>} />
+          <Route exact path="/dashboard" render={props => <CC_Dashboard {...props}/> } />
         </PrivateRoute>
       </Switch>
     </div>
