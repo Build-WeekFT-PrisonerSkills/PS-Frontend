@@ -58,11 +58,11 @@ const LoginForm = ({ values, status, errors, touched, setUserToken, isSubmitting
       <Form>
           <Title>Login</Title>
           <FormEntry>
-            <Field className='loginEntry' type='email' name='username' placeholder='Email' />
+            <Field type='email' name='username' placeholder='Email or Username' />
             {touched.username && errors.username && (<StyledErrorMessage>{errors.username}</StyledErrorMessage>)}
           </FormEntry>
           <FormEntry>
-            <Field className='loginEntry' type='password' name='password' placeholder='Password' />
+            <Field type='password' name='password' placeholder='Password' />
             {touched.password && errors.password && (<StyledErrorMessage>{errors.password}</StyledErrorMessage>)}
           </FormEntry>
           <button type='submit'>Login</button>
@@ -81,8 +81,8 @@ const FormikLoginForm = withFormik({
   },
 
   validationSchema: Yup.object().shape({
-    username: Yup.string().required('Must Enter a Username'),
-    password: Yup.string().required('Must Enter a Password')
+    username: Yup.string().required('You Must Enter a Username'),
+    password: Yup.string().required('You Must Enter a Password')
   }),
 
   handleSubmit(values, {setStatus}) {
