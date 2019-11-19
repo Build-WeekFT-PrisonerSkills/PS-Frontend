@@ -14,7 +14,7 @@ function PrisonInmatesSingle(props) {
       .catch(err => {
         console.log(err);
       });
-  }, []);
+  }, [props.match.id]);
 
   return (
     <div>
