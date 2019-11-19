@@ -12,7 +12,6 @@ const PrisonList = () => {
     axios
       .get('https://prisoner-skills-bw.herokuapp.com/api/users/')
       .then(res => {
-        // console.log(res.data);
         setPrison(res.data);
       })
       .catch(err => {
