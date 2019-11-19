@@ -20,6 +20,7 @@ import {CC_Dashboard} from './Pages/CC_Dashboard';
 
 import PrisonList from './Components/PrisonList/PrisonList';
 import PrisonDetail from './Components/PrisonList/PrisonDetail';
+import PrisonInmates from './Components/PrisonList/PrisonInmates';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
         {/* Added these for PrisonList */}
         <Route exact path='/api/users/' component={PrisonList} />
         <Route exact path='/api/users/:id' component={PrisonDetail} />
-        <Route exact path='/api/users/:id/inmates' component={PrisonDetail} />
+        <Route exact path='/api/users/:id/inmates' component={PrisonInmates} />
 
         <PrivateRoute>
           <Route exact path='/api/auth/register' component={RegisterPage} />

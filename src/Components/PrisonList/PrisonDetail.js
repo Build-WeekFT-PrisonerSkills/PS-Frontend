@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 const PrisonDetail = props => {
   const [details, setDetails] = useState([]);
@@ -22,7 +23,9 @@ const PrisonDetail = props => {
       <h3>Welcome to the PrisonDetail</h3>
       <p>The PrisonName: {details.prisonName}</p>
       <p>The City: {details.city}</p>
-      <button>Show more</button>
+      <Link to={`/api/users/${props.match.params.id}/inmates`}>
+        <button>Show more</button>
+      </Link>
     </div>
   );
 };
