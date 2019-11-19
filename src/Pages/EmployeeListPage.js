@@ -29,8 +29,6 @@ export const EmployeeListPage = (props) => {
               <div key={item.id} className="inmateCard">
                 <h2>{item.inmateFirstName} {item.inmateLastName}</h2>
                 <div key={item.id}>
-                  <p>Age: {item.age}</p>
-                  <p>Available: {item.available}</p>
                   <p>Skills: {item.skillset}</p>
                   <p>Experience: {item.workExperience}</p>
                 </div>
