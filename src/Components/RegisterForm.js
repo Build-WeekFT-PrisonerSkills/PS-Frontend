@@ -5,6 +5,8 @@ import * as Yup from "yup";
 import styled  from "@emotion/styled";
 import "../ComponentStyles/styles.css";
 import "../ComponentStyles/styles-custom.css";
+import {Link} from 'react-router-dom';
+import { axiosWithAuth } from "../Utils/axiosWithAuth";
 
 const MyTextInput = ({ label, ...props }) => {
   // useField() returns [formik.getFieldProps(), formik.getFieldMeta()]
@@ -79,10 +81,11 @@ export const RegisterForm = () => {
   return (
     <>
       <h1>Register!</h1>
+      <p> Already a Member?  <button><Link to="/api/auth/login"> Login </Link></button></p>
       <Formik
         initialValues={{
           username: "",
-          email: "",
+          password: "",
           acceptedTerms: false, // added for our checkbox
         //   jobType: "" added for our select
         }}
@@ -91,10 +94,10 @@ export const RegisterForm = () => {
         //     .min(15, "Must be 15 characters or less")
         //     .required("Required"),
           username: Yup.string()
-            .min(20, "Must be 20 characters or less")
+            .max(20, "Must be 20 characters or less")
             .required("Required"),
-          email: Yup.string()
-            .email("Invalid email addresss`")
+          password: Yup.string()
+            .max(20, "Must be 20 characters or less")
             .required("Required"),
           acceptedTerms: Yup.boolean()
             .required("Required")
@@ -113,20 +116,36 @@ export const RegisterForm = () => {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
           }, 400);
+          axiosWithAuth()
+          .post('/api/auth/register', values)
+          .then(res =>{
+            console.log(res);
+            setSubmitting(res.data);
+          })
+          .catch(err => console.log(err.res));
         }}
+        // handleSubmit(values, {setStatus}) {
+        //   axiosWithAuth()
+        //     .post('/api/auth/login', values)
+        //     .then(res =>{
+        //       console.log(res);
+        //       setStatus(res.data);
+        //     })
+        //     .catch(err => console.log(err.res));
+        // }
       >
         <Form>
           <MyTextInput
             label="username"
             name="username"
-            type="text"
-            placeholder="Username"
+            type="email"
+            placeholder="username"
           />
           <MyTextInput
-            label="Email Address"
-            name="email"
-            type="email"
-            placeholder="jane@formik.com"
+            label="password"
+            name="password"
+            type="password"
+            placeholder="password"
           />
           {/* <MySelect label="Job Type" name="jobType">
             <option value="">Select a job type</option>

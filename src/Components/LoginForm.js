@@ -2,10 +2,10 @@
 import React, {useEffect} from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
-import axios from 'axios';
 import styled  from "@emotion/styled";
 import "../ComponentStyles/styles.css";
 import "../ComponentStyles/styles-custom.css";
+import { axiosWithAuth } from "../Utils/axiosWithAuth";
 
 const StyledErrorMessage = styled.p`
   color: red;
@@ -52,7 +52,7 @@ const LoginForm = ({ values, status, errors, touched, setUserToken, isSubmitting
     <MainContainer>
 
     <ImgContainer>
-      <img src='https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9' alt='electricion working on lines' />
+      <img src='https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?ixlib=rb-1.2.1ixid=eyJhcHBfaWQiOjEyMDd9' style={{width: '30rem'}}alt='electricion working on lines' />
     </ImgContainer>
     <FormContainer>
       <Form>
@@ -86,8 +86,8 @@ const FormikLoginForm = withFormik({
   }),
 
   handleSubmit(values, {setStatus}) {
-    axios
-      .post('', values)
+    axiosWithAuth()
+      .post('/api/auth/login', values)
       .then(res =>{
         console.log(res);
         setStatus(res.data);
