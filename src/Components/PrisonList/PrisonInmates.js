@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 import PrisonInmate from './PrisonInmate';
 
@@ -21,9 +22,11 @@ const PrisonInmates = props => {
   return (
     <div>
       <h2>Welcome to prisonInmates</h2>
-      {inmates.map(inmate => {
-        return <PrisonInmate key={inmates.id} inmate={inmate} />;
-      })}
+      <Link to={`api/users/inmates/${props.match.params.id}`}>
+        {inmates.map(inmate => {
+          return <PrisonInmate key={inmates.id} inmate={inmate} />;
+        })}
+      </Link>
     </div>
   );
 };
