@@ -30,6 +30,7 @@ function App() {
         {/* Added these for PrisonList */}
         <Route exact path='/api/users/' component={PrisonList} />
         <Route exact path='/api/users/:id' component={PrisonDetail} />
+        <Route exact path='/api/users/:id/inmates' component={PrisonDetail} />
 
         <PrivateRoute>
           <Route exact path='/api/auth/register' component={RegisterPage} />
