@@ -8,6 +8,7 @@ const PrisonInmates = props => {
   const [inmates, setInmates] = useState([]);
 
   useEffect(() => {
+    const id = props.match.params.id;
     axios
       .get(`https://prisoner-skills-bw.herokuapp.com/api/users/${props.match.params.id}/inmates`)
       .then(res => {
@@ -22,13 +23,17 @@ const PrisonInmates = props => {
   return (
     <div>
       <h2>Welcome to prisonInmates</h2>
-      <Link to={`/employeeProfile/${props.match.params.id}`}>
-        {inmates.map(inmate => {
-          return <PrisonInmate key={inmates.id} inmate={inmate} />;
-        })}
-      </Link>
+
+      {inmates.map(inmate => {
+        return (
+          <Link to={`/employeeProfile/${inmate.id}`}>
+            <PrisonInmate key={inmates.id} inmate={inmate} {...props} />;
+          </Link>
+        );
+      })}
     </div>
   );
 };
+// <Link to={`prisonInmates/${prison.id}`}>
 
 export default PrisonInmates;
