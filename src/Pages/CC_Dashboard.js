@@ -12,10 +12,8 @@ const CC_Dashboard = (props) => {
         <>
         <h1>Career Coach Dashboard</h1>
         <div>
-            <Link to=''><button>view profile</button></Link>
-            <Link to=''><button>add employee</button></Link>
-            <Link to=''><button>edit employee</button></Link>
-            <Link to=''><button>add employee</button></Link>
+            <Link to='/prisonProfile'><button>view profile</button></Link>
+            <Link to='/addEmployee'><button>add employee</button></Link>
         </div>
         <EmployeeListPage {...props}/>
         </>
