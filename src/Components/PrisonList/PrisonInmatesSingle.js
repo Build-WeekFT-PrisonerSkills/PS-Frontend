@@ -19,6 +19,7 @@ function PrisonInmatesSingle(props) {
   return (
     <div>
       <h2>Welcome to single party</h2>
+      
     </div>
   );
 }

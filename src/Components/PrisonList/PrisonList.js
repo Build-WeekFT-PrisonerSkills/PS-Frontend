@@ -23,7 +23,7 @@ const PrisonList = () => {
     <div>
       <div className='prisonList'>
         {prison.map(prison => (
-          <Link to={`/api/users/${prison.id}`}>
+          <Link to={`/prisonProfile/${prison.id}`}>
             <div>
               <Prisons prison={prison} />
             </div>

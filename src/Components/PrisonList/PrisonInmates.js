@@ -22,15 +22,12 @@ const PrisonInmates = props => {
 
   return (
     <div>
-      <div className='prisonList'>
-        {inmates.map(inmate => (
-          <Link to={`/prisonInmates/${inmate.id}`}>
-            <div>
-              <PrisonInmate inmate={inmate} />
-            </div>
-          </Link>
-        ))}
-      </div>
+      <h2>Welcome to prisonInmates</h2>
+      <Link to={`/employeeProfile/${props.match.params.id}`}>
+        {inmates.map(inmate => {
+          return <PrisonInmate key={inmates.id} inmate={inmate} />;
+        })}
+      </Link>
     </div>
   );
 };
