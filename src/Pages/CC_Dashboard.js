@@ -6,7 +6,7 @@ export const CC_Dashboard = (props) => {
     return(
         <>
         <h1>Career Coach Dashboard</h1>
-
+        
         </>
     )
 }
