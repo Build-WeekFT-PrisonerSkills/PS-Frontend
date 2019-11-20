@@ -10,7 +10,6 @@ const PrisonDetail = props => {
     axios
       .get(`https://prisoner-skills-bw.herokuapp.com/api/users/${id}`)
       .then(res => {
-        console.log(res.data);
         setDetails(res.data);
       })
       .catch(err => {
