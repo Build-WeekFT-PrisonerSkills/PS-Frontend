@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link, Route} from 'react-router-dom';
 import axios from 'axios';
+import {NavBarOther} from '../NavBarOther';
 
 import Prisons from './Prisons';
 
@@ -21,6 +22,7 @@ const PrisonList = () => {
 
   return (
     <div>
+      <NavBarOther/>
       <div className='prisonList'>
         {prison.map(prison => (
           <Link to={`/prisonProfile/${prison.id}`}>

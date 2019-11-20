@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-
+import {NavBarOther} from '../NavBarOther';
 function PrisonInmatesSingle(props) {
   const [inmate, setInmate] = useState([]);
 
@@ -17,6 +17,8 @@ function PrisonInmatesSingle(props) {
   }, []);
 
   return (
+    <>
+ 
     <div>
       <div className='single'>
         <p>First Name: {inmate.inmateFirstName}</p>
@@ -25,6 +27,7 @@ function PrisonInmatesSingle(props) {
         <p>Work Experience: {inmate.workExperience}</p>
       </div>
     </div>
+    </>
   );
 }
 

@@ -5,6 +5,7 @@ import "../ComponentStyles/styles-custom.css";
 import {addEmployee} from '../Actions/authAction';
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {NavBarOther} from '../Components/NavBarOther';
 
 const StyledErrorMessage = styled.p`
   color: red;
@@ -60,6 +61,8 @@ const CC_AddEmployee = (props) => {
     props.history.push('/dashboard');
   }
   return (
+    <>
+    <NavBarOther/>
     <MainContainer>
       <ImgContainer>
         <img src='https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?ixlib=rb-1.2.1ixid=eyJhcHBfaWQiOjEyMDd9' style={{width: '30rem'}}alt='electricion working on lines' />
@@ -161,6 +164,7 @@ const CC_AddEmployee = (props) => {
         </Title>
       </FormContainer>
     </MainContainer>
+    </>
   )
 };
 

@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-
 import {axiosWithAuth} from '../Utils/axiosWithAuth';
 import {Link} from 'react-router-dom';
 
@@ -9,9 +8,7 @@ const CC_PrisonProfile = props => {
 
   useEffect(() => {
     const id = props.match.params.id;
-
     axiosWithAuth()
-
       .get(`https://prisoner-skills-bw.herokuapp.com/api/users/${id}`)
       .then(res => {
         console.log(res.data);
@@ -20,17 +17,7 @@ const CC_PrisonProfile = props => {
       .catch(err => {
         console.log(err);
       });
-
-
-  return (
-    <div>
-      <h3>Welcome to the PrisonDetail</h3>
-      <p>The PrisonName: {details.prisonName}</p>
-      <p>The City: {details.city}</p>
-      <button>Edit</button>
-      <button>Delete</button>
-
-  }, [props.match.params.id]);
+    },[]);
 
   return (
     <div>

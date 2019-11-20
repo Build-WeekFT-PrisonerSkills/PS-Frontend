@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import styled from '@emotion/styled';
 import "../ComponentStyles/styles.css";
 import "../ComponentStyles/styles-custom.css";
+import {NavBarLanding} from '../Components/NavBarLanding';
 
 const Hero = styled.div`
 `
@@ -23,6 +24,8 @@ const LandingButtons = styled.div`
 
 export const LandingPage = () => {
     return(
+        <>
+        <NavBarLanding/>
         <Hero>
             <img className='landingImg' src='https://images.unsplash.com/photo-1455165814004-1126a7199f9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80' alt='Man welding metal'/>
             <Heading>Welcome to <span className='landingSpan'>Second Chance</span></Heading>
@@ -35,5 +38,6 @@ export const LandingPage = () => {
                 </Link>
             </LandingButtons>
         </Hero>
+        </>
     );
 }

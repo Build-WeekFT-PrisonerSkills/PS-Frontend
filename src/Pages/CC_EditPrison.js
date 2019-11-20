@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+import {NavBarOther} from '../'
 const CC_EditPrison = () => {
   const [state, setState] = useState({
     name: '',
