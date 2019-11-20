@@ -59,7 +59,6 @@ function App() {
           <Route exact path='/dashboard' render={props => <CC_Dashboard {...props} />} />
         </PrivateRoute>
       </Switch>
-      <CC_EditPrison />
     </div>
   );
 }
