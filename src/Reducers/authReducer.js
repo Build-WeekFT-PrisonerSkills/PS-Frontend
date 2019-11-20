@@ -47,6 +47,7 @@ export const authReducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload.response.data.message,
             };
+            
         default:
             return state;
     }

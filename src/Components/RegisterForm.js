@@ -54,7 +54,7 @@ const RegisterForm = (props) => {
     // i want to pass email and password values to my actions -> reducers -> store etc
     props.registerUser(state);
     console.log(props)
-    props.history.push('/dashboard');
+    props.history.push('/addPrison');
   }
   return (
     <MainContainer>

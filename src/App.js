@@ -6,15 +6,11 @@ import PrivateRoute from './Utils/PrivateRoute';
 import {LandingPage} from './Pages/LandingPage';
 import {RegisterPage} from './Pages/RegisterPage';
 import {LoginPage} from './Pages/LoginPage';
-import {PrisonListPage} from './Pages/PrisonListPage';
-import {PrisonProfilePage} from './Pages/PrisonProfilePage';
-import {CC_PrisonProfile} from './Pages/CC_PrisonProfile';
-import {CC_AddPrison} from './Pages/CC_AddPrison';
+import CC_PrisonProfile from './Pages/CC_PrisonProfile';
+import CC_AddPrison from './Pages/CC_AddPrison';
 import {CC_EditPrison} from './Pages/CC_EditPrison';
-import {EmployeeListPage} from './Pages/EmployeeListPage';
-import {EmployeeProfilePage} from './Pages/EmployeeProfilePage';
 import {CC_EmployeeProfile} from './Pages/CC_EmployeeProfile';
-import {CC_AddEmployee} from './Pages/CC_AddEmployee';
+import CC_AddEmployee from './Pages/CC_AddEmployee';
 import {CC_EditEmployee} from './Pages/CC_EditEmployee';
 import CC_Dashboard from './Pages/CC_Dashboard';
 
@@ -35,15 +31,12 @@ function App() {
         <Route exact path="/employeeList/:id/employees" render={props => <PrisonInmates {...props}/>} />
         <Route exact path="/employeeProfile/:id" render={props => <PrisonInmatesSingle {...props}/>} />
         <PrivateRoute>
-
           <Route exact path="/prisonProfile" render={props => <CC_PrisonProfile {...props}/>} />
           <Route exact path="/addPrison" render={props => <CC_AddPrison {...props}/>} />
           <Route exact path="/editPrison/:id" render={props => <CC_EditPrison {...props}/>} />
-
           <Route exact path="/employeeProfile" render={props => <CC_EmployeeProfile {...props}/>} />
           <Route exact path="/addEmployee" render={props => <CC_AddEmployee {...props}/>} />
           <Route exact path="/editEmployee/:id" render={props => <CC_EditEmployee {...props}/>} />
-
           <Route exact path="/dashboard" render={props => <CC_Dashboard {...props}/> } />
         </PrivateRoute>
       </Switch>
