@@ -10,7 +10,6 @@ const Hero = styled.div`
 const Heading = styled.h1`
     text-transform: uppercase;
     text-align: center;
-    font-family: Lato;
     font-style: normal;
     font-weight: normal;
     font-size: 40px;

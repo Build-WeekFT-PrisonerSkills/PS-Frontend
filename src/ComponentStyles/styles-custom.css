@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
 body {
   margin: 0;
   background-color: mintcream;
+  font-family: 'Lato', sans-serif;
+  color: #202B30;
 }
 
 input[type="email"],
@@ -67,4 +71,12 @@ img {
   font-weight: bolder;
   font-size: 60px;
   color: #005C9E;
+}
+
+.inmateCard {
+  color: black;
+}
+
+h1 {
+  color: black;
 }
