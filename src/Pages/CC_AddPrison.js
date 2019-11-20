@@ -143,9 +143,7 @@ const CC_AddPrison = (props) => {
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
-    isLoading: state.isLoading,
-    error: state.error
+    prison: state.prison,
   }
 }
 export default connect(

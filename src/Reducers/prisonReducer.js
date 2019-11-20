@@ -1,10 +1,9 @@
 import * as a from '../Actions/authAction'
 
 const initialState = {
-    user: {},
+    prison: {},
     isLoading: false,
     error: ''
-
 }
 
 export const prisonReducer = (state = initialState, action) => {
@@ -19,7 +18,7 @@ export const prisonReducer = (state = initialState, action) => {
         case a.ADD_PRISON_SUCCESS:
             return {
                 ...state,
-                user: action.payload.user,
+                prison: action.payload,
                 error: ''
             };
         case a.ADD_PRISON_FAIL:
@@ -37,7 +36,7 @@ export const prisonReducer = (state = initialState, action) => {
         case a.DELETE_PRISON_SUCCESS:
             return {
                 ...state,
-                user: action.payload.user,
+                isLoading: false,
                 error: ''
             };
         case a.DELETE_PRISON_FAIL:
@@ -55,7 +54,7 @@ export const prisonReducer = (state = initialState, action) => {
         case a.EDIT_PRISON_SUCCESS:
             return {
                 ...state,
-                user: action.payload.user,
+                prison: action.payload,
                 error: ''
             };
         case a.EDIT_PRISON_FAIL:

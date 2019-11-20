@@ -1,10 +1,9 @@
 import * as a from '../Actions/authAction'
 
 const initialState = {
-    user: {},
+    employee: {},
     isLoading: false,
     error: ''
-
 }
 
 export const employeeReducer = (state = initialState, action) => {
@@ -19,12 +18,9 @@ export const employeeReducer = (state = initialState, action) => {
         case a.ADD_EMPLOYEE_SUCCESS:
             return {
                 ...state,
-                user: { 
-                    ...state.user, 
-                    email: action.payload.email,
-                    password: action.payload.password,
-                },
-                error: ''
+                employee: action.payload,
+                isLoading: false,
+                error: null,
             }
         case a.ADD_EMPLOYEE_FAIL:
             return {
@@ -40,12 +36,7 @@ export const employeeReducer = (state = initialState, action) => {
             }
         case a.DELETE_EMPLOYEE_SUCCESS:
             return {
-                ...state,
-                user: { 
-                    ...state.user, 
-                    email: action.payload.email,
-                    password: action.payload.password,
-                },
+                isLoading: false,
                 error: ''
             }
         case a.DELETE_EMPLOYEE_FAIL:
@@ -65,8 +56,7 @@ export const employeeReducer = (state = initialState, action) => {
                 ...state,
                 user: { 
                     ...state.user, 
-                    email: action.payload.email,
-                    password: action.payload.password,
+                    
                 },
                 error: ''
             }

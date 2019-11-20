@@ -39,7 +39,7 @@ const Title = styled.h1`
 const CC_AddEmployee = (props) => {
   const [state, setState] = useState({
     age: '',
-    available: 0,
+    available: 1,
     image: null,
     inmateFirstName: '',
     inmateLastName: '',
@@ -166,9 +166,7 @@ const CC_AddEmployee = (props) => {
 
 const mapStateToProps = state => {
   return {
-    user: state.user,
-    isLoading: state.isLoading,
-    error: state.error
+    employee: state.employee,
   }
 }
 export default connect(

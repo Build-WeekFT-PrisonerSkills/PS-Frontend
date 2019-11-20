@@ -1,4 +1,3 @@
-// Register form
 import React, {useState, useEffect} from "react";
 import styled  from "@emotion/styled";
 import "../ComponentStyles/styles.css";
@@ -51,9 +50,7 @@ const RegisterForm = (props) => {
   
   const onSubmit = (e) => {
     e.preventDefault();
-    // i want to pass email and password values to my actions -> reducers -> store etc
     props.registerUser(state);
-    console.log(props)
     props.history.push('/addPrison');
   }
   return (

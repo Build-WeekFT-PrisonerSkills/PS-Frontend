@@ -55,7 +55,7 @@ export const logIn = credentials => dispatch => {
 export const addPrison = credentials => dispatch => {
   dispatch({ type: ADD_PRISON });
   axiosWithAuth()
-    .post('/api/auth/register', credentials)
+    .post('/api/users/prison', credentials)
     .then(res => {
       dispatch({ type: ADD_PRISON_SUCCESS, payload: res.data })
       })
@@ -91,8 +91,9 @@ export const editPrison = credentials => dispatch => {
 export const addEmployee = credentials => dispatch => {
   dispatch({ type: ADD_EMPLOYEE });
   axiosWithAuth()
-    .post('/api/auth/register', credentials)
+    .post('/api/users/inmates', credentials)
     .then(res => {
+      console.log(res);
       dispatch({ type: ADD_EMPLOYEE_SUCCESS, payload: res.data })
       })
     .catch(err => {
@@ -103,7 +104,7 @@ export const addEmployee = credentials => dispatch => {
 export const deleteEmployee = credentials => dispatch => {
   dispatch({ type: DELETE_EMPLOYEE });
   axiosWithAuth()
-    .post('/api/auth/register', credentials)
+    .delete('/api/users/inmates/:id', credentials)
     .then(res => {
       dispatch({ type: DELETE_EMPLOYEE_SUCCESS, payload: res.data })
       })
@@ -115,7 +116,7 @@ export const deleteEmployee = credentials => dispatch => {
 export const editEmployee = credentials => dispatch => {
   dispatch({ type: EDIT_EMPLOYEE });
   axiosWithAuth()
-    .post('/api/auth/register', credentials)
+    .put('/api/users/inmates/:id', credentials)
     .then(res => {
       dispatch({ type: EDIT_EMPLOYEE_SUCCESS, payload: res.data })
       })

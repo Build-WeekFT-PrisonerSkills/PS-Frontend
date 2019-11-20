@@ -4,7 +4,6 @@ const initialState = {
     user: {},
     isLoading: false,
     error: ''
-
 }
 
 export const authReducer = (state = initialState, action) => {
@@ -30,6 +29,7 @@ export const authReducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload.response.data.message,
             }
+// ***********************************************************************************
         case a.LOGIN_START:
             return {
                 ...state,
