@@ -8,7 +8,7 @@ import {RegisterPage} from './Pages/RegisterPage';
 import {LoginPage} from './Pages/LoginPage';
 import {PrisonListPage} from './Pages/PrisonListPage';
 import {PrisonProfilePage} from './Pages/PrisonProfilePage';
-import {CC_PrisonProfile} from './Pages/CC_PrisonProfile';
+import CC_PrisonProfile from './Pages/CC_PrisonProfile';
 import {CC_AddPrison} from './Pages/CC_AddPrison';
 
 import CC_EditPrison from './Pages/CC_EditPrison';
@@ -59,7 +59,6 @@ function App() {
           <Route exact path='/dashboard' render={props => <CC_Dashboard {...props} />} />
         </PrivateRoute>
       </Switch>
-      <CC_EditPrison />
     </div>
   );
 }
