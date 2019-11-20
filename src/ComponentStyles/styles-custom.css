@@ -10,6 +10,7 @@ body {
 input[type="email"],
 input[type="text"],
 input[type="number"],
+input[type="password"],
 textarea,
 select {
   width: 400px;
@@ -25,6 +26,9 @@ label.checkbox {
 
 button[type="submit"] {
   margin-top: 1rem;
+  background-color: #0085D4;
+  color: mintcream;
+  width: 100%;
 }
 
 img {
