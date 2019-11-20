@@ -22,7 +22,7 @@ const PrisonInmates = props => {
   return (
     <div>
       <h2>Welcome to prisonInmates</h2>
-      <Link to={`api/users/inmates/${props.match.params.id}`}>
+      <Link to={`/employeeProfile/${props.match.params.id}`}>
         {inmates.map(inmate => {
           return <PrisonInmate key={inmates.id} inmate={inmate} />;
         })}
