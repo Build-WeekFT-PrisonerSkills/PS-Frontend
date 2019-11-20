@@ -29,8 +29,8 @@ const CC_EditPrison = () => {
   };
   return (
     <div>
-      <p>Welcome to edit a person form</p>
-      <form>
+      <h2>Welcome to Edit a Person </h2>
+      <form submit={onSubmit}>
         <label htmlFor='name'>Name</label>
         <input type='text' name='name' onChange={changeHandler} value={state.name} />
 
@@ -53,6 +53,9 @@ const CC_EditPrison = () => {
           onChange={changeHandler}
           value={state.contactPhone}
         />
+        <div className='btn'>
+          <button>Submit</button>
+        </div>
       </form>
     </div>
   );
