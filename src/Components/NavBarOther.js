@@ -9,7 +9,7 @@ export const NavBarOther = () => {
             display: 'flex', 
             alignItems: 'center',
             justifyContent: 'space-between'}}>
-            <Link to="/">
+            <Link to="/" style={{textDecoration: 'none'}}>
                 <h4>Second Chance</h4>
             </Link>
             <div style={{display: "flex", justifyContent: 'space-evenly',}}>
