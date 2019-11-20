@@ -7,5 +7,5 @@ export const PrisonStyled = styled.div`
   padding: 30px;
   width: 200px;
   margin: 20px;
-  box-shadow: 0 0 5px 10px #ccc;
+  box-shadow: 0 5px 10px #ccc;
 `;
