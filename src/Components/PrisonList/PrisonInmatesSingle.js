@@ -6,7 +6,7 @@ function PrisonInmatesSingle(props) {
 
   useEffect(() => {
     axios
-      .get(`https://prisoner-skills-bw.herokuapp.com/api/users/inmates/${props.match.id}`)
+      .get(`https://prisoner-skills-bw.herokuapp.com/api/users/inmates/${props.match.parmas.id}`)
       .then(res => {
         console.log(res.data);
         setInmate(res.data);

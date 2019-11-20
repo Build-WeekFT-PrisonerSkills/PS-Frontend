@@ -30,7 +30,7 @@ function App() {
         <Route exact path='/' component={LandingPage} />
 
         {/* Added these for PrisonList */}
-        <Route exact path='/api/users/' component={PrisonList} />
+        <Route exact path='/api/users' component={PrisonList} />
         <Route exact path='/api/users/:id' component={PrisonDetail} />
         <Route exact path='/prisonlist/:id' component={PrisonInmates} />
         <Route exact path='/prisonInmates/:id	' component={PrisonInmatesSingle} />
@@ -43,7 +43,7 @@ function App() {
           <Route exact path='/api/auth/login' component={CC_PrisonProfile} />
           <Route exact path='/api/users/prison' component={CC_AddPrison} />
           <Route exact path='/api/users/:id' component={CC_EditPrison} />
-          <Route exact path='/api/users/:id/inmates' component={EmployeeListPage} />
+          <Route exact path='/api/users/:id/inmates' component={PrisonInmates} />
           <Route exact path='/api/users/inmates/:id' component={EmployeeProfilePage} />
           <Route exact path='/api/auth/login' component={CC_EmployeeProfile} />
           <Route exact path='/api/users/inmates' component={CC_AddEmployee} />

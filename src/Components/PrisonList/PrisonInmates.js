@@ -12,7 +12,7 @@ const PrisonInmates = props => {
     axios
       .get(`https://prisoner-skills-bw.herokuapp.com/api/users/${props.match.params.id}/inmates`)
       .then(res => {
-        console.log(res.data);
+        // console.log(res.data);
         setInmates(res.data);
       })
       .catch(err => {
@@ -22,14 +22,18 @@ const PrisonInmates = props => {
 
   return (
     <div>
-      <h2>Welcome to prisonInmates</h2>
-      <Link to={`/prisonInmates/${props.match.params.id}`}>
-        {inmates.map(inmate => {
-          return <PrisonInmate key={inmate.id} inmate={inmate} />;
-        })}
-      </Link>
+      <div className='prisonList'>
+        {inmates.map(inmate => (
+          <Link to={`/prisonInmates/${inmate.id}`}>
+            <div>
+              <PrisonInmate inmate={inmate} />
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
+// <Link to={`prisonInmates/${prison.id}`}>
 
 export default PrisonInmates;
