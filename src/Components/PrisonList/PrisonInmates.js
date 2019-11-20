@@ -12,22 +12,25 @@ const PrisonInmates = props => {
     axios
       .get(`https://prisoner-skills-bw.herokuapp.com/api/users/${props.match.params.id}/inmates`)
       .then(res => {
-        // console.log(res.data);
+        console.log(res.data);
         setInmates(res.data);
       })
       .catch(err => {
         console.log(err);
       });
-  }, [props.match.params.id]);
+  }, []);
 
   return (
     <div>
       <h2>Welcome to prisonInmates</h2>
-      <Link to={`/employeeProfile/${props.match.params.id}`}>
-        {inmates.map(inmate => {
-          return <PrisonInmate key={inmates.id} inmate={inmate} />;
-        })}
-      </Link>
+
+      {inmates.map(inmate => {
+        return (
+          <Link to={`/employeeProfile/${inmate.id}`}>
+            <PrisonInmate key={inmates.id} inmate={inmate} {...props} />;
+          </Link>
+        );
+      })}
     </div>
   );
 };
