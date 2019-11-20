@@ -27,7 +27,6 @@ function App() {
   return (
     <div className='App'>
       <Switch>
-<<<<<<< HEAD
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/register" render={props => <RegisterPage {...props}/>} />
         <Route exact path="/login" render={props => <LoginPage {...props}/>} />
@@ -43,30 +42,6 @@ function App() {
           <Route exact path="/addEmployee" render={props => <CC_AddEmployee {...props}/>} />
           <Route exact path="/editEmployee/:id" render={props => <CC_EditEmployee {...props}/>} />
           <Route exact path="/dashboard" render={props => <CC_Dashboard {...props}/> } />
-=======
-        <Route exact path='/' component={LandingPage} />
-
-        {/* Added these for PrisonList */}
-        <Route exact path='/api/users/' component={PrisonList} />
-        <Route exact path='/api/users/:id' component={PrisonDetail} />
-        <Route exact path='/api/users/:id/inmates' component={PrisonInmates} />
-        <Route exact path='/api/users/inmates/:id	' component={PrisonInmatesSingle} />
-
-        <PrivateRoute>
-          <Route exact path='/api/auth/register' component={RegisterPage} />
-          <Route exact path='/api/auth/login' component={LoginPage} />
-          <Route exact path='/api/users/' component={PrisonListPage} />
-          <Route exact path='/api/users/:id' component={PrisonProfilePage} />
-          <Route exact path='/api/auth/login' component={CC_PrisonProfile} />
-          <Route exact path='/api/users/prison' component={CC_AddPrison} />
-          <Route exact path='/api/users/:id' component={CC_EditPrison} />
-          <Route exact path='/api/users/:id/inmates' component={EmployeeListPage} />
-          <Route exact path='/api/users/inmates/:id' component={EmployeeProfilePage} />
-          <Route exact path='/api/auth/login' component={CC_EmployeeProfile} />
-          <Route exact path='/api/users/inmates' component={CC_AddEmployee} />
-          <Route exact path='/api/users/inmates/:id' component={CC_EditEmployee} />
-          <Route exact path='/api/auth/login' component={CC_Dashboard} />
->>>>>>> 7fc76d978fd0e0bc4fa23647f74aababc8df450f
         </PrivateRoute>
       </Switch>
 
