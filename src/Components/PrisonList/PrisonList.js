@@ -4,6 +4,7 @@ import axios from 'axios';
 import {NavBarOther} from '../NavBarOther';
 
 import Prisons from './Prisons';
+import {PrisonListStyle, Title} from './GetPrisonerStyled/PrisonListStyled';
 
 const PrisonList = () => {
   const [prison, setPrison] = useState([]);
@@ -22,16 +23,10 @@ const PrisonList = () => {
 
   return (
     <div>
-      <NavBarOther/>
-      <div className='prisonList'>
-        {prison.map(prison => (
-          <Link to={`/prisonProfile/${prison.id}`}>
-            <div>
-              <Prisons prison={prison} />
-            </div>
-          </Link>
-        ))}
-      </div>
+        <NavBarOther/>
+      <Title>Prison List</Title>
+      <PrisonListStyle>
+
     </div>
   );
 };

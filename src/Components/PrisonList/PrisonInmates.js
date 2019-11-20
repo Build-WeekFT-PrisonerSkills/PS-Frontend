@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {NavBarOther} from '../NavBarOther';
 import PrisonInmate from './PrisonInmate';
+import {Container, Inmate} from './GetPrisonerStyled/PrisonInMatesStyled';
 
 const PrisonInmates = props => {
   const [inmates, setInmates] = useState([]);
@@ -22,24 +23,28 @@ const PrisonInmates = props => {
 
   return (
     <>
-    <NavBarOther/>
-    <div>
-      <h2>Welcome to prisonInmates</h2>
+       <NavBarOther/>
+      <h2>Welcome to prison Inmates</h2>
+      <Container>
+        <Inmate>
+          <div>
+            {inmates.map(inmate => {
+              return (
+                <Link to={`/employeeProfile/${inmate.id}`}>
+                  <PrisonInmate key={inmates.id} inmate={inmate} {...props} />;
+                </Link>
+              );
+            })}
+          </div>
+        </Inmate>
+      </Container>
 
-      {inmates.map(inmate => {
-        return (
-          <>
+
           
-          <Link to={`/employeeProfile/${inmate.id}`}>
-            <PrisonInmate key={inmates.id} inmate={inmate} {...props} />;
-          </Link>
-          </>
-        );
-      })}
-    </div>
+          
     </>
   );
 };
-// <Link to={`prisonInmates/${prison.id}`}>
+
 
 export default PrisonInmates;

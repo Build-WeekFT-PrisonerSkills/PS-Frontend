@@ -3,7 +3,6 @@ import {axiosWithAuth} from '../Utils/axiosWithAuth';
 import {Link} from 'react-router-dom';
 
 const CC_PrisonProfile = props => {
-
   const [details, setDetails] = useState([]);
 
   useEffect(() => {
@@ -17,21 +16,21 @@ const CC_PrisonProfile = props => {
       .catch(err => {
         console.log(err);
       });
-    },[]);
+
+  }, [props.match.params.id]);
+
 
   return (
     <div>
       <h3>Welcome to your Prison Profile</h3>
       <p>The PrisonName: {details.prisonName}</p>
       <p>The City: {details.city}</p>
-      <Link to={`/employeeList/${props.match.params.id}/employees`}>
-        <button>Show more</button>
+      <Link to={`/editPrison/${details.id}/employees`}>
+        <button>Edit</button>
       </Link>
-
+      <button>Delete</button>
     </div>
   );
 };
 
-
 export default CC_PrisonProfile;
-
