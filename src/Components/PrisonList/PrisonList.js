@@ -3,6 +3,7 @@ import {Link, Route} from 'react-router-dom';
 import axios from 'axios';
 
 import Prisons from './Prisons';
+import {PrisonListStyle, Title} from './GetPrisonerStyled/PrisonListStyled';
 
 const PrisonList = () => {
   const [prison, setPrison] = useState([]);
@@ -21,7 +22,8 @@ const PrisonList = () => {
 
   return (
     <div>
-      <div className='prisonList'>
+      <Title>Prison List</Title>
+      <PrisonListStyle>
         {prison.map(prison => (
           <Link to={`/prisonProfile/${prison.id}`}>
             <div>
@@ -29,7 +31,7 @@ const PrisonList = () => {
             </div>
           </Link>
         ))}
-      </div>
+      </PrisonListStyle>
     </div>
   );
 };
