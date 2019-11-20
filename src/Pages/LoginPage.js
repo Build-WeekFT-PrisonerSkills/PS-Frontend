@@ -2,8 +2,8 @@
 import React from 'react';
 import LoginForm from '../Components/LoginForm';
 
-export const LoginPage = () => {
+export const LoginPage = (props) => {
     return(
-        <LoginForm/>
+        <LoginForm {...props}/>
     )
 }

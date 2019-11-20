@@ -5,6 +5,7 @@ import "../ComponentStyles/styles.css";
 import "../ComponentStyles/styles-custom.css";
 import {registerUser} from '../Actions/authAction';
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 const StyledErrorMessage = styled.p`
   color: red;
@@ -53,7 +54,7 @@ const RegisterForm = (props) => {
     // i want to pass email and password values to my actions -> reducers -> store etc
     props.registerUser(state);
     console.log(props)
-    props.history.push('/user/dashboard');
+    props.history.push('/dashboard');
   }
   return (
     <MainContainer>
@@ -63,6 +64,8 @@ const RegisterForm = (props) => {
       <FormContainer>
         <Title>
         <h1>Register</h1>
+        <p style={{fontSize:'2rem'}}>Already a member?</p>
+        <Link to='/login'>Login</Link>
         <form onSubmit={onSubmit}>
           <FormEntry>
             Email: <br></br>
