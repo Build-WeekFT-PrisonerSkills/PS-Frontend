@@ -14,6 +14,7 @@ const CC_Dashboard = (props) => {
         <div>
             <Link to='/prisonProfile'><button>view prison profile</button></Link>
             <Link to='/addEmployee'><button>add employee</button></Link>
+            <Link to='/editEmployee'><button>edit employee</button></Link>
         </div>
         <EmployeeListPage {...props}/>
         </>
