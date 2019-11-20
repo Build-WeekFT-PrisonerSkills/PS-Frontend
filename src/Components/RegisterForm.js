@@ -12,7 +12,7 @@ const StyledErrorMessage = styled.p`
   margin: 10px;
 `
 const MainContainer = styled.div`
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -20,6 +20,7 @@ const MainContainer = styled.div`
 `
 const FormEntry = styled.div`
   margin: 20px;
+  font-size: 2rem;
 `
 const ImgContainer = styled.div`
   margin: 0 auto;
@@ -35,6 +36,7 @@ const Title = styled.h1`
   line-height: 58px;
   /* identical to box height */
   color: black;
+  text-align: center;
 `
 
 const RegisterForm = (props) => {
@@ -51,24 +53,24 @@ const RegisterForm = (props) => {
   
   const onSubmit = (e) => {
     e.preventDefault();
-    props.registerUser(state);
-    props.history.push('/addPrison');
+    props.logIn(state);
+    props.history.push('/dashboard');
   }
   return (
     <>
     <NavBarOther/>
     <MainContainer>
+ 
       <ImgContainer>
         <img src='https://images.unsplash.com/photo-1566453838084-7ec27e71b3ca?ixlib=rb-1.2.1ixid=eyJhcHBfaWQiOjEyMDd9auto=formatfit=cropw=932q=80' style={{width: '30rem'}}alt='electricion working on lines' />
       </ImgContainer>
       <FormContainer>
         <Title>
         <h1>Register</h1>
-        <p style={{fontSize:'2rem'}}>Already a member?</p>
-        <Link to='/login'>Login</Link>
+        
+        </Title>
         <form onSubmit={onSubmit}>
-          <FormEntry>
-            Email: <br></br>
+        <FormEntry>
             <input
               type='email' 
               name='email' 
@@ -79,7 +81,6 @@ const RegisterForm = (props) => {
             </input>
           </FormEntry>
           <FormEntry>
-            Password: <br></br>
             <input
               type='password' 
               name='password' 
@@ -90,9 +91,14 @@ const RegisterForm = (props) => {
             </input>
           </FormEntry>
           <button type='submit' >Register</button>
+          <div style={{display: 'flex', justifyContent: 'center', margin: 'auto'}}>
+            <p style={{marginTop: '8px'}}>Already a Member? </p>
+            <Link to="/login" style={{textDecoration: 'none', fontSize: '1.5rem'}}> <button>Login</button></Link>
+          </div>
+          
         </form>
-        </Title>
       </FormContainer>
+      
     </MainContainer>
     </>
   )
@@ -108,4 +114,5 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps, 
   {registerUser})(RegisterForm);
+
 
