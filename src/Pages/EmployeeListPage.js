@@ -1,6 +1,7 @@
 //inmate/employee list goes here:
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
 import styled from '@emotion/styled';
 import "../ComponentStyles/styles.css";
 import "../ComponentStyles/styles-custom.css";
@@ -31,7 +32,7 @@ export const EmployeeListPage = (props) => {
                 <div key={item.id}>
                   <p>Skills: {item.skillset}</p>
                   <p>Experience: {item.workExperience}</p>
-                </div>
+                </div>          
               </div>
             )
           )}

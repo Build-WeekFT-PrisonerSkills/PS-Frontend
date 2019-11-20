@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link, Route} from 'react-router-dom';
 import axios from 'axios';
+import {NavBarOther} from '../NavBarOther';
 
 import Prisons from './Prisons';
 import {PrisonListStyle, Title} from './GetPrisonerStyled/PrisonListStyled';
@@ -22,16 +23,10 @@ const PrisonList = () => {
 
   return (
     <div>
+        <NavBarOther/>
       <Title>Prison List</Title>
       <PrisonListStyle>
-        {prison.map(prison => (
-          <Link to={`/prisonProfile/${prison.id}`}>
-            <div>
-              <Prisons prison={prison} />
-            </div>
-          </Link>
-        ))}
-      </PrisonListStyle>
+
     </div>
   );
 };

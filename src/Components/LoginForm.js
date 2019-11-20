@@ -5,13 +5,14 @@ import "../ComponentStyles/styles-custom.css";
 import {logIn} from '../Actions/authAction';
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import {NavBarOther} from '../Components/NavBarOther';
 
 const StyledErrorMessage = styled.p`
   color: red;
   margin: 10px;
 `
 const MainContainer = styled.div`
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -19,6 +20,7 @@ const MainContainer = styled.div`
 `
 const FormEntry = styled.div`
   margin: 20px;
+  font-size: 2rem;
 `
 const ImgContainer = styled.div`
   margin: 0 auto;
@@ -34,6 +36,7 @@ const Title = styled.h1`
   line-height: 58px;
   /* identical to box height */
   color: black;
+  text-align: center;
 `
 
 const LoginForm = (props) => {
@@ -55,16 +58,19 @@ const LoginForm = (props) => {
     props.history.push('/dashboard');
   }
   return (
+    <>
+       <NavBarOther/>
     <MainContainer>
+ 
       <ImgContainer>
         <img src='https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?ixlib=rb-1.2.1ixid=eyJhcHBfaWQiOjEyMDd9' style={{width: '30rem'}}alt='electricion working on lines' />
       </ImgContainer>
       <FormContainer>
         <Title>
         <h1>Login</h1>
+        </Title>
         <form onSubmit={onSubmit}>
-          <FormEntry>
-            Email: <br></br>
+        <FormEntry>
             <input
               type='email' 
               name='email' 
@@ -75,7 +81,6 @@ const LoginForm = (props) => {
             </input>
           </FormEntry>
           <FormEntry>
-            Password: <br></br>
             <input
               type='password' 
               name='password' 
@@ -87,9 +92,9 @@ const LoginForm = (props) => {
           </FormEntry>
           <button type='submit' >Login</button>
         </form>
-        </Title>
       </FormContainer>
     </MainContainer>
+    </>
   )
 };
 

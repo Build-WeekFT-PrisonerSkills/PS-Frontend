@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-
+import {NavBarOther} from '../NavBarOther';
 import PrisonInmate from './PrisonInmate';
 import {Container, Inmate} from './GetPrisonerStyled/PrisonInMatesStyled';
 
@@ -23,6 +23,7 @@ const PrisonInmates = props => {
 
   return (
     <>
+       <NavBarOther/>
       <h2>Welcome to prison Inmates</h2>
       <Container>
         <Inmate>
@@ -37,9 +38,13 @@ const PrisonInmates = props => {
           </div>
         </Inmate>
       </Container>
+
+
+          
+          
     </>
   );
 };
-// <Link to={`prisonInmates/${prison.id}`}>
+
 
 export default PrisonInmates;

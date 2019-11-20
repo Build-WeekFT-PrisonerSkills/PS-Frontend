@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import {Container, Inmate, People} from './GetPrisonerStyled/PrisonInmateStyled';
 const PrisonInmate = props => {
   return (
@@ -13,6 +14,7 @@ const PrisonInmate = props => {
         </People>
       </Inmate>
     </Container>
+
   );
 };
 export default PrisonInmate;

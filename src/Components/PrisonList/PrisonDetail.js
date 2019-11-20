@@ -1,7 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+
 import {Container, PrisonDetails} from './GetPrisonerStyled/PrisonDetailStyled';
+
+import {NavBarOther} from '../NavBarOther';
+
 
 const PrisonDetail = props => {
   const [details, setDetails] = useState([]);
@@ -19,7 +23,11 @@ const PrisonDetail = props => {
   }, [props.match.params.id]);
 
   return (
+
+    <>
+    <NavBarOther/>
     <Container>
+    
       <PrisonDetails>
         <h3>Welcome to the PrisonDetail</h3>
         <p>The PrisonName: {details.prisonName}</p>
@@ -29,6 +37,8 @@ const PrisonDetail = props => {
         </Link>
       </PrisonDetails>
     </Container>
+    </>
+
   );
 };
 

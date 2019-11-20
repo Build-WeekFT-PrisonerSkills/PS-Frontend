@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 import {PrisonStyled, Container} from './GetPrisonerStyled/PrisonStyled';
 
 const Prison = props => {
@@ -10,6 +11,7 @@ const Prison = props => {
         <p>PrisonName: {props.prison.prisonName}</p>
       </PrisonStyled>
     </Container>
+
   );
 };
 
