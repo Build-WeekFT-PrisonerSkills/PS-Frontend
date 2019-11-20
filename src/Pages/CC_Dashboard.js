@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {EmployeeListPage} from '../Pages/EmployeeListPage';
+import {NavBarOther} from '../Components/NavBarOther';
 
 const CC_Dashboard = (props) => {
     const [state, setState] = useState({
@@ -10,6 +11,7 @@ const CC_Dashboard = (props) => {
     })
     return(
         <>
+           <NavBarOther/>
         <h1>Career Coach Dashboard</h1>
         <div>
             <Link to='/prisonProfile'><button>view prison profile</button></Link>
