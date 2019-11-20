@@ -23,7 +23,7 @@ const PrisonDetail = props => {
       <h3>Welcome to the PrisonDetail</h3>
       <p>The PrisonName: {details.prisonName}</p>
       <p>The City: {details.city}</p>
-      <Link to={`/api/users/${props.match.params.id}/inmates`}>
+      <Link to={`/employeeList/${props.match.params.id}/employees`}>
         <button>Show more</button>
       </Link>
     </div>

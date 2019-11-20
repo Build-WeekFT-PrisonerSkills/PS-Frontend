@@ -1,77 +1,51 @@
 import * as a from '../Actions/authAction'
 
 const initialState = {
-    user: { 
-        username: "",
-        password: "",
-        },
-    decodedToken: {
-            token: {},
-        },
-    isPosting: false,
-    isSignedUp: false,
-    isLoggedIn: false,
-    isError: false,
+    user: {},
+    isLoading: false,
     error: ''
+
 }
 
 export const authReducer = (state = initialState, action) => {
     switch(action.type){
-        case a.SIGNUP_START:
+        case a.REGISTER_START:
             return {
                 ...state,
-                isPosting: true,
-                isSignedUp: false,
-                isError: false,
-            error: ''
-            }
-        case a.SIGNUP_SUCCESS:
-            return {
-                ...state,
-                user: { ...state.user, username: action.payload.username },
-                isPosting: false,
-                isSignedUp: true,
-                isError: false,
+                isLoading: true,
                 error: ''
             }
-        case a.SIGNUP_FAIL:
+        case a.REGISTER_SUCCESS:
             return {
                 ...state,
-                isPosting: false,
-                isSignedUp: false,
-                isError: true,
-                error: action.payload.response.data.message
+                user: { 
+                    ...state.user, 
+                    email: action.payload.email,
+                    password: action.payload.password,
+                },
+                error: ''
+            }
+        case a.REGISTER_FAIL:
+            return {
+                ...state,
+                error: action.payload.response.data.message,
             }
         case a.LOGIN_START:
             return {
                 ...state,
-                isPosting: true,
-                isError: false,
+                isLoading: true,
                 error: ''
             };
         case a.LOGIN_SUCCESS:
             return {
                 ...state,
                 user: action.payload.user,
-                isPosting: false,
-                isLoggedIn: true,
-                isError: false,
                 error: ''
-            };
-        case a.LOGIN_DECODE:
-            return {
-                ...state,
-                decodedToken: {
-                    token: action.payload
-                }
             };
         case a.LOGIN_FAIL:
             return {
                 ...state,
-                isPosting: false,
-                isLoggedIn: false,
-                isError: true,
-                error: action.payload.response.data.message
+                error: action.payload.response.data.message,
             };
         default:
             return state;
