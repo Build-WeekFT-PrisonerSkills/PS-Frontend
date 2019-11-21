@@ -30,10 +30,17 @@ function App() {
         <Route exact path='/login' render={props => <LoginPage {...props} />} />
         <Route exact path='/prisonList' render={props => <PrisonList {...props} />} />
         <Route exact path='/prisonProfile/:id' render={props => <PrisonDetail {...props} />} />
-        <Route exact path='/employeeList/:id/employees' render={props => <PrisonInmates {...props} />} />
-        <Route exact path='/employeeProfile/:id' render={props => <PrisonInmatesSingle {...props} />} />
+        <Route
+          exact
+          path='/employeeList/:id/employees'
+          render={props => <PrisonInmates {...props} />}
+        />
+        <Route
+          exact
+          path='/employeeProfile/:id'
+          render={props => <PrisonInmatesSingle {...props} />}
+        />
         <PrivateRoute>
-
           <Route exact path='/prisonProfile' render={props => <CC_PrisonProfile {...props} />} />
           <Route exact path='/addPrison' render={props => <CC_AddPrison {...props} />} />
           <Route exact path='/editPrison/:id' render={props => <CC_EditPrison {...props} />} />
@@ -45,11 +52,14 @@ function App() {
           <Route exact path='/addEmployee' render={props => <CC_AddEmployee {...props} />} />
           <Route exact path='/editEmployee/:id' render={props => <CC_EditEmployee {...props} />} />
 
-          <Route exact path="/employeeProfile" render={props => <CC_EmployeeProfile {...props}/>} />
-          <Route exact path="/addEmployee" render={props => <CC_AddEmployee {...props}/>} />
-          <Route exact path="/editEmployee/:id" render={props => <CC_EditEmployee {...props}/>} />
-          <Route exact path="/dashboard" render={props => <CC_Dashboard {...props}/> } />
-
+          <Route
+            exact
+            path='/employeeProfile'
+            render={props => <CC_EmployeeProfile {...props} />}
+          />
+          <Route exact path='/addEmployee' render={props => <CC_AddEmployee {...props} />} />
+          <Route exact path='/editEmployee/:id' render={props => <CC_EditEmployee {...props} />} />
+          <Route exact path='/dashboard' render={props => <CC_Dashboard {...props} />} />
         </PrivateRoute>
       </Switch>
     </div>
@@ -57,3 +67,5 @@ function App() {
 }
 
 export default App;
+
+//---comment--//
