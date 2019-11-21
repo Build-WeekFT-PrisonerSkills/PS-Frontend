@@ -22,14 +22,15 @@ const PrisonList = () => {
   }, []);
 
   return (
-    <div>
-      <NavBarOther />
-      {prisons.map(prison => {
-        return <Prisons prison={prison} />;
-      })}
-      <Title>Prison List</Title>
-      <PrisonListStyle />
-    </div>
+    <PrisonListStyle>
+      {prisons.map(prison => (
+        <Link to={`/prisonProfile/${prison.id}`}>
+          <div>
+            <Prisons prison={prison} />
+          </div>
+        </Link>
+      ))}
+    </PrisonListStyle>
   );
 };
 
