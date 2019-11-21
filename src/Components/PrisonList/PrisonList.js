@@ -25,8 +25,8 @@ const PrisonList = () => {
     <div>
       <NavBarOther/>
       <Title>Prison List</Title>
-      
-      <PrisonListStyle/>
+      <PrisonListStyle />
+
     </div>
   );
 };
