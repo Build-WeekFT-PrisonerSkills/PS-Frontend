@@ -7,14 +7,14 @@ import Prisons from './Prisons';
 import {PrisonListStyle, Title} from './GetPrisonerStyled/PrisonListStyled';
 
 const PrisonList = () => {
-  const [prison, setPrison] = useState([]);
+  const [prisons, setPrisons] = useState([]);
   const [getResult, setResult] = useState('');
 
   useEffect(() => {
     axios
       .get('https://prisoner-skills-bw.herokuapp.com/api/users/')
       .then(res => {
-        setPrison(res.data);
+        setPrisons(res.data);
       })
       .catch(err => {
         console.log(err);
@@ -23,10 +23,12 @@ const PrisonList = () => {
 
   return (
     <div>
-        <NavBarOther/>
+      <NavBarOther />
+      {prisons.map(prison => {
+        return <Prisons prison={prison} />;
+      })}
       <Title>Prison List</Title>
       <PrisonListStyle />
-
     </div>
   );
 };
