@@ -8,7 +8,7 @@ import "../ComponentStyles/styles-custom.css";
 
 export const EmployeeListPage = (props) => {
   const [inmateList, setInmateList] = useState([]);
-  const prisonId = parseInt(props.match.params.id)
+  const prisonId = props.match.id;
 
   useEffect(() => {
     axios

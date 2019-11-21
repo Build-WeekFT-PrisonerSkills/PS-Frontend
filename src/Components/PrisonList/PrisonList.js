@@ -23,10 +23,10 @@ const PrisonList = () => {
 
   return (
     <div>
-        <NavBarOther/>
+      <NavBarOther/>
       <Title>Prison List</Title>
-      <PrisonListStyle>
-
+      
+      <PrisonListStyle/>
     </div>
   );
 };

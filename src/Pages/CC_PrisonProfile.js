@@ -23,8 +23,8 @@ const CC_PrisonProfile = props => {
   return (
     <div>
       <h3>Welcome to your Prison Profile</h3>
-      <p>The PrisonName: {details.prisonName}</p>
-      <p>The City: {details.city}</p>
+  <p>The PrisonName: {details.prisonName}</p>
+      <p>The City:{details.city} </p>
       <Link to={`/editPrison/${details.id}/employees`}>
         <button>Edit</button>
       </Link>
@@ -32,5 +32,6 @@ const CC_PrisonProfile = props => {
     </div>
   );
 };
+
 
 export default CC_PrisonProfile;
