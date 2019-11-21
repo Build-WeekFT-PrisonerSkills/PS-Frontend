@@ -45,9 +45,6 @@ function App() {
           <Route exact path='/addEmployee' render={props => <CC_AddEmployee {...props} />} />
           <Route exact path='/editEmployee/:id' render={props => <CC_EditEmployee {...props} />} />
 
-          <Route exact path="/prisonProfile" render={props => <CC_PrisonProfile {...props}/>} />
-          <Route exact path="/addPrison" render={props => <CC_AddPrison {...props}/>} />
-          <Route exact path="/editPrison/:id" render={props => <CC_EditPrison {...props}/>} />
           <Route exact path="/employeeProfile" render={props => <CC_EmployeeProfile {...props}/>} />
           <Route exact path="/addEmployee" render={props => <CC_AddEmployee {...props}/>} />
           <Route exact path="/editEmployee/:id" render={props => <CC_EditEmployee {...props}/>} />
