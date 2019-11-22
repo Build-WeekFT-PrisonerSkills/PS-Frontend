@@ -29,8 +29,16 @@ function App() {
         <Route exact path='/login' render={props => <LoginPage {...props} />} />
         <Route exact path='/prisonList' render={props => <PrisonList {...props} />} />
         <Route exact path='/prisonProfile/:id' render={props => <PrisonDetail {...props} />} />
-        <Route exact path='/employeeList/:id/employees' render={props => <PrisonInmates {...props} />} />
-        <Route exact path='/employeeProfile/:id' render={props => <PrisonInmatesSingle {...props} />} />
+        <Route
+          exact
+          path='/employeeList/:id/employees'
+          render={props => <PrisonInmates {...props} />}
+        />
+        <Route
+          exact
+          path='/employeeProfile/:id'
+          render={props => <PrisonInmatesSingle {...props} />}
+        />
         <PrivateRoute>
           <Route exact path="/prisonProfile" render={props => <CC_PrisonProfile {...props}/>} />
           <Route exact path="/addPrison" render={props => <CC_AddPrison {...props}/>} />
