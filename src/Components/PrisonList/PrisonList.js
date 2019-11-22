@@ -8,23 +8,43 @@ import {PrisonListStyle, Title} from './GetPrisonerStyled/PrisonListStyled';
 
 const PrisonList = () => {
   const [prisons, setPrisons] = useState([]);
-  const [getResult, setResult] = useState('');
+  const [search, setSearch] = useState('');
 
   useEffect(() => {
     axios
       .get('https://prisoner-skills-bw.herokuapp.com/api/users/')
       .then(res => {
-        console.log(res.data);
-        setPrisons(res.data);
+        console.log('Data : ', res.data);
+
+        const characters = res.data.filter(character =>
+          character.prisonName.toLowerCase().includes(search.toLowerCase())
+        );
+        console.log(characters);
+
+        setPrisons(characters);
       })
       .catch(err => {
         console.log(err);
       });
-  }, []);
+  }, [search]);
+
+  const changeHandler = e => {
+    setSearch(e.target.value);
+  };
 
   return (
     <>
       <h2 style={{textAlign: 'center'}}>Welcome to the prison list</h2>
+      <form>
+        <input
+          type='text'
+          autoComplete='off'
+          name='search'
+          value={search}
+          placeholder='search....'
+          onChange={changeHandler}
+        />
+      </form>
       <PrisonListStyle>
         {prisons.map(prison => (
           <Link to={`/prisonProfile/${prison.id}`}>

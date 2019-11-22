@@ -7,14 +7,14 @@ import {Container, Inmate} from './GetPrisonerStyled/PrisonInMatesStyled';
 
 const PrisonInmates = props => {
   const [inmates, setInmates] = useState([]);
+  const [search, setSearch] = useState([]);
 
   useEffect(() => {
     const id = props.match.params.id;
     axios
       .get(`https://prisoner-skills-bw.herokuapp.com/api/users/${props.match.params.id}/inmates`)
       .then(res => {
-        console.log(res.data);
-        setInmates(res.data);
+        setInmates(search);
       })
       .catch(err => {
         console.log(err);
@@ -24,6 +24,7 @@ const PrisonInmates = props => {
   return (
     <>
       <NavBarOther />
+
       <h2 style={{textAlign: 'center', marginTop: '50px'}}>List of Prison Inmates</h2>
       <Container>
         <Inmate>
