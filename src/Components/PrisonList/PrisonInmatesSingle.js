@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {NavBarOther} from '../NavBarOther';
+import {Single, Container} from './GetPrisonerStyled/PrisonInmatesSingleStyles';
 function PrisonInmatesSingle(props) {
   const [inmate, setInmate] = useState([]);
 
@@ -18,15 +19,15 @@ function PrisonInmatesSingle(props) {
 
   return (
     <>
- 
-    <div>
-      <div className='single'>
-        <p>First Name: {inmate.inmateFirstName}</p>
-        <p>Last Name: {inmate.inmateLastName}</p>
-        <p>Skill Set: {inmate.skillset}</p>
-        <p>Work Experience: {inmate.workExperience}</p>
-      </div>
-    </div>
+      <h2 style={{textAlign: 'center'}}>Personal Information</h2>
+      <Container>
+        <Single>
+          <p>First Name: {inmate.inmateFirstName}</p>
+          <p>Last Name: {inmate.inmateLastName}</p>
+          <p>Skill Set: {inmate.skillset}</p>
+          <p>Work Experience: {inmate.workExperience}</p>
+        </Single>
+      </Container>
     </>
   );
 }
