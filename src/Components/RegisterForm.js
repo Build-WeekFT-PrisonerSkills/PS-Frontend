@@ -53,8 +53,7 @@ const RegisterForm = (props) => {
   
   const onSubmit = (e) => {
     e.preventDefault();
-    props.logIn(state);
-    props.history.push('/dashboard');
+    props.registerUser(state, props);
   }
   return (
     <>

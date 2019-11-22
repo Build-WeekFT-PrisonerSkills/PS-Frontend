@@ -1,6 +1,7 @@
 import * as a from '../Actions/authAction'
 
 const initialState = {
+    prisons: [],
     prison: {},
     isLoading: false,
     error: ''
@@ -36,6 +37,8 @@ export const prisonReducer = (state = initialState, action) => {
         case a.DELETE_PRISON_SUCCESS:
             return {
                 ...state,
+                // in res.data when you send it as action.payload. send over an id instead of an message. 
+                prisons: state.prisons.filter(prison => prison.id !== action.payload),
                 isLoading: false,
                 error: ''
             };
@@ -62,6 +65,12 @@ export const prisonReducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload.response.data.message,
             };
+// ********************************************************************************
+        case a.GET_PRISONS_SUCCESS:
+            return {
+                ...state,
+                prisons: action.payload,
+            }
         default:
             return state;
     }
