@@ -23,28 +23,21 @@ const PrisonInmates = props => {
 
   return (
     <>
-       <NavBarOther/>
-      <h2>Welcome to prison Inmates</h2>
+      <NavBarOther />
+      <h2 style={{textAlign: 'center', marginTop: '50px'}}>List of Prison Inmates</h2>
       <Container>
         <Inmate>
-          <div>
-            {inmates.map(inmate => {
-              return (
-                <Link to={`/employeeProfile/${inmate.id}`}>
-                  <PrisonInmate key={inmates.id} inmate={inmate} {...props} />;
-                </Link>
-              );
-            })}
-          </div>
+          {inmates.map(inmate => {
+            return (
+              <Link to={`/employeeProfile/${inmate.id}`}>
+                <PrisonInmate key={inmates.id} inmate={inmate} {...props} />;
+              </Link>
+            );
+          })}
         </Inmate>
       </Container>
-
-
-          
-          
     </>
   );
 };
-
 
 export default PrisonInmates;
