@@ -13,4 +13,6 @@ export const Inmate = styled.div`
 
 export const People = styled.div`
   margin: 10px;
+  width: 200px;
+  text-decoration: none;
 `;

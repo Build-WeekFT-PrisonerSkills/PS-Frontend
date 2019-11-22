@@ -1,17 +1,16 @@
 import React from 'react';
 
-
 import {PrisonStyled, Container} from './GetPrisonerStyled/PrisonStyled';
 
 const Prison = props => {
   return (
     <Container>
       <PrisonStyled>
-        <p>ID: {props.prison.id}</p>
-        <p>PrisonName: {props.prison.prisonName}</p>
+        <h5>Prison Name: {props.prison.prisonName}</h5>
+
+        <h6>State : {props.prison.state}</h6>
       </PrisonStyled>
     </Container>
-
   );
 };
 

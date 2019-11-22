@@ -4,6 +4,7 @@ export const PrisonListStyle = styled.div`
   display: flex;
   padding: 50px;
   flex-wrap: wrap;
+
 `;
 
 export const Title = styled.div`

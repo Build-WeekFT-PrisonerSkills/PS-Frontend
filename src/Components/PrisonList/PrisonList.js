@@ -14,6 +14,7 @@ const PrisonList = () => {
     axios
       .get('https://prisoner-skills-bw.herokuapp.com/api/users/')
       .then(res => {
+        console.log(res.data);
         setPrisons(res.data);
       })
       .catch(err => {
@@ -22,15 +23,18 @@ const PrisonList = () => {
   }, []);
 
   return (
-    <PrisonListStyle>
-      {prisons.map(prison => (
-        <Link to={`/prisonProfile/${prison.id}`}>
-          <div>
-            <Prisons prison={prison} />
-          </div>
-        </Link>
-      ))}
-    </PrisonListStyle>
+    <>
+      <h2 style={{textAlign: 'center'}}>Welcome to the prison list</h2>
+      <PrisonListStyle>
+        {prisons.map(prison => (
+          <Link to={`/prisonProfile/${prison.id}`}>
+            <div>
+              <Prisons prison={prison} />
+            </div>
+          </Link>
+        ))}
+      </PrisonListStyle>
+    </>
   );
 };
 
