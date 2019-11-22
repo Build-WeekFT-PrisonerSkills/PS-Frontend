@@ -45,6 +45,7 @@ const CC_AddPrison = (props) => {
     city: '',
     state: '',
     zipcode: '',
+    user_id: '',
   });
   const onChange = (e) => {
     setState({
@@ -67,7 +68,7 @@ const CC_AddPrison = (props) => {
       </ImgContainer>
       <FormContainer>
         <Title>
-        <h1>addPrison</h1>
+        <h1>Add Prison</h1>
         <form onSubmit={onSubmit}>
           <FormEntry>
             Prison Name: <br></br>
@@ -135,7 +136,17 @@ const CC_AddPrison = (props) => {
             >
             </input>
           </FormEntry>
-          
+          <FormEntry>
+            User ID: <br></br>
+            <input
+              type='text' 
+              name='user_id' 
+              placeholder='user_id'
+              value={props.user_id}
+              onChange={onChange}
+            >
+            </input>
+          </FormEntry>
           <button type='submit' >addPrison</button>
         </form>
         </Title>
@@ -148,6 +159,9 @@ const CC_AddPrison = (props) => {
 const mapStateToProps = state => {
   return {
     prison: state.prison,
+    // can i grab anything from the store that i want?
+    // grab registered user id from auth reducer file?
+
   }
 }
 export default connect(

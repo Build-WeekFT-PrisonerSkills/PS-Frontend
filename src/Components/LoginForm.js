@@ -53,9 +53,7 @@ const LoginForm = (props) => {
   
   const onSubmit = (e) => {
     e.preventDefault();
-    // i want to pass email and password values to my actions -> reducers -> store etc
-    props.logIn(state);
-    props.history.push('/dashboard');
+    props.logIn(state, props);
   }
   return (
     <>

@@ -53,8 +53,7 @@ const RegisterForm = (props) => {
   
   const onSubmit = (e) => {
     e.preventDefault();
-    props.registerUser(state);
-    props.history.push('/addPrison');
+    props.registerUser(state, props);
   }
   return (
     <>

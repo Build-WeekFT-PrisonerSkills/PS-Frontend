@@ -1,4 +1,6 @@
 import { axiosWithAuth } from "../Utils/axiosWithAuth";
+import axios from 'axios';
+
 //Login and Register Actions
 export const REGISTER_START = "REGISTER_START";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
@@ -16,6 +18,7 @@ export const DELETE_PRISON_FAIL = "DELETE_PRISON_FAIL";
 export const EDIT_PRISON = "EDIT_PRISON";
 export const EDIT_PRISON_SUCCESS = "EDIT_PRISON_SUCCESS";
 export const EDIT_PRISON_FAIL = "EDIT_PRISON_FAIL";
+export const GET_PRISONS_SUCCESS = "GET_PRISONS_SUCCESS";
 //Employee Actions
 export const ADD_EMPLOYEE = "ADD_EMPLOYEE";
 export const ADD_EMPLOYEE_SUCCESS = "ADD_EMPLOYEE_SUCCESS";
@@ -27,25 +30,30 @@ export const DELETE_EMPLOYEE = "ADD_EMPLOYEE";
 export const DELETE_EMPLOYEE_SUCCESS = "ADD_EMPLOYEE_SUCCESS";
 export const DELETE_EMPLOYEE_FAIL = "ADD_EMPLOYEE_FAIL";
 
-export const registerUser = credentials => dispatch => {
+export const registerUser = (credentials, props) => dispatch => {
   dispatch({ type: REGISTER_START });
   axiosWithAuth()
     .post('/api/auth/register', credentials)
     .then(res => {
+      console.log("register action/dispatch res", res);
       dispatch({ type: REGISTER_SUCCESS, payload: res.data })
+      props.history.push('/CC_AddPrison');
       })
     .catch(err => {
       dispatch({ type: REGISTER_FAIL, payload: err })
       });
 };
 
-export const logIn = credentials => dispatch => {
+export const logIn = (credentials, props) => dispatch => {
+  console.log("creds", credentials)
   dispatch({ type: LOGIN_START });
   axiosWithAuth()
     .post('/api/auth/login', credentials)
     .then(res => {
+      console.log("res",res);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data })
       localStorage.setItem("token", res.data.token);
+      props.history.push('/dashboard')
     })
     .catch(err => {
       dispatch({ type: LOGIN_FAIL, payload: err })
@@ -64,29 +72,55 @@ export const addPrison = credentials => dispatch => {
       });
 };
 
-export const deletePrison = credentials => dispatch => {
+export const deletePrison = id => dispatch => {
+  // console.log("id in deletePrison", id)
+  const prisoners = [];
   dispatch({ type: DELETE_PRISON });
+
   axiosWithAuth()
-    .delete('/api/users/:id', credentials)
+    .get(`/api/users/${id}/inmates`)
+      .then(res => {
+        // console.log(res)
+        res.data.forEach((prisoner) => {
+
+          axiosWithAuth()
+            .delete(`/api/users/inmates/${prisoner.id}`)
+            .then(res => console.log("find it",res))
+        })
+
+        return axiosWithAuth().delete(`/api/users/${id}`)
+      })
     .then(res => {
+      console.log("res", res)
+      // i want the id not a message prop. send me a message and the id or just the id. 
       dispatch({ type: DELETE_PRISON_SUCCESS, payload: res.data })
       })
     .catch(err => {
       dispatch({ type: DELETE_PRISON_FAIL, payload: err })
-      });
+    });
 };
 
-export const editPrison = credentials => dispatch => {
+export const editPrison = (credentials, props) => dispatch => {
   dispatch({ type: EDIT_PRISON });
   axiosWithAuth()
     .put('/api/users/:id', credentials)
     .then(res => {
       dispatch({ type: EDIT_PRISON_SUCCESS, payload: res.data })
+      props.history.push('/editPrison/:id');
       })
     .catch(err => {
       dispatch({ type: EDIT_PRISON_FAIL, payload: err })
       });
 };
+
+export const getPrisons = () => dispatch => {
+  axios
+    .get(`https://prisoner-skills-bw.herokuapp.com/api/users/`)
+    .then(res => {
+      dispatch({ type: GET_PRISONS_SUCCESS, payload: res.data})
+    })
+    .catch(err => console.log(err))
+}
 
 export const addEmployee = credentials => dispatch => {
   dispatch({ type: ADD_EMPLOYEE });

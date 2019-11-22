@@ -21,6 +21,7 @@ export const authReducer = (state = initialState, action) => {
                     ...state.user, 
                     email: action.payload.email,
                     password: action.payload.password,
+                    id: action.payload.id,
                 },
                 error: ''
             }
@@ -39,8 +40,12 @@ export const authReducer = (state = initialState, action) => {
         case a.LOGIN_SUCCESS:
             return {
                 ...state,
-                user: action.payload.user,
-                error: ''
+                user: { 
+                    ...state.user, 
+                    email: action.payload.email,
+                    password: action.payload.password,
+                    id: action.payload.id,
+                },
             };
         case a.LOGIN_FAIL:
             return {
